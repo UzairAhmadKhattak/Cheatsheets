@@ -1,0 +1,18 @@
+- docker build -t "ordo-docker" .
+  - used to Bulding image, dot specify find docker file in current working directory
+- docker image ls
+- docker rmi (hash of image)
+  - used to remove image
+- docker rm (hash of container)
+  - used to remove container
+- docker run (name of docker contianer)
+  - used to run docker container
+- docker start -i (hash of contianer)
+  - used for running container
+- docker run -it (name of image)
+  - used to run image in container
+- docker run -it (name of image and sh(shell)/bash depending on OS of image)
+- docker login
+- docker push
+- docker image tag (name of the current tag) (new tag)
+  - used to renaming image
