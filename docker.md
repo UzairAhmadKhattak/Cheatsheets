@@ -52,3 +52,17 @@
 - `docker exec -it (name of container) sh`  
   Runs commands in a container interactively.
 
+## Volume of Containers
+- `docker volume create (name of volume)`  
+- `docker volume inspect (name of volume)`
+- `docker run -d -p 3000:4000 -v (name of volume):(absolute path of data in container) (name of the image)`
+  Continer volume doest delete with removing container
+- `docker run -d -p 3000:4000 -v $(pwd):/app (name of the image)`
+  This command is used to bind local directory with working directory of the container so that we dont rebuild everytime we make changes to the code.
+## Docker-compose
+- `docker-compose build`
+  This command is used for bulding image from docker-compose.yml file
+- `docker-compose up`
+  This will build image and will up the docker continaer
+- `docker-compose network ls`
+  
