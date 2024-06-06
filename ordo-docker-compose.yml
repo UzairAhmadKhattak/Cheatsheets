@@ -1,0 +1,55 @@
+version: '3.8'
+
+services:
+  
+  staging_backend:
+    build: ./Ordo-backend
+    ports:
+      - "8000:8000"
+    env_file:
+      - .stag_env
+  
+  production_backend:
+    build: ./Ordo-backend
+    ports:
+      - "8001:8000"
+    env_file:
+      - .prod_env
+  staging_frontend:
+    build: ./Ordo-Frontend
+    ports:
+      - "8080:8080"
+    environment:
+      - VUE_APP_API_ENDPOINT=http://staging_backend:8080/api/
+  production_frontend:
+    build: ./Ordo-Frontend
+    ports:
+      - "8081:8080"
+    environment:
+      - VUE_APP_API_ENDPOINT=http://production_backend:8080/api/
+
+  database_staging:
+    image: postgres:alpine3.20
+    environment:
+      POSTGRES_DB: ${staging_db}
+      POSTGRES_USER: ${staging_user}
+      POSTGRES_PASSWORD: ${staging_password}
+    ports:
+      - "5433:5432"
+    volumes: 
+      - staging:/var/lib/postgresql/data
+
+  database_production:
+    image: postgres:alpine3.20
+    environment:
+      POSTGRES_DB: ${production_db}
+      POSTGRES_USER: ${production_user}
+      POSTGRES_PASSWORD: ${production_password}
+    ports:
+      - "5432:5432"
+    volumes:
+      - production:/var/lib/postgresql/data
+
+volumes:
+  staging:
+  production:
