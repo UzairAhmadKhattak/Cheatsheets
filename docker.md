@@ -7,6 +7,8 @@
 ## Building and Managing Images
 - `docker build -t "ordo-docker" .`  
   Builds an image. The dot specifies to find the Dockerfile in the current working directory.
+- `docker build --build-arg ENV_FILE=env.prod -t myapp:latest .`
+  This command is used to build image with arguments provided in this case it is ENV_FILE
 - `docker image ls`  
   Lists all Docker images.
 - `docker rmi (hash of image)`  
