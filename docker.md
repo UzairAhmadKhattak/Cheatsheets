@@ -67,4 +67,5 @@
 - `docker-compose up`
   This will build image and will up the docker continaer
 - `docker-compose network ls`
+- `docker-compose --env-file myenvfile.env up`
   
