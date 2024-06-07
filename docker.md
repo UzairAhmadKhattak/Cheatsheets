@@ -62,6 +62,8 @@
 - `docker run -d -p 3000:4000 -v $(pwd):/app (name of the image)`
   This command is used to bind local directory with working directory of the container so that we dont rebuild everytime we make changes to the code.
 ## Docker-compose
+- `docker-compose config`
+Use to see how the final yml file will look like after reading env file etc
 - `docker-compose build`
   This command is used for bulding image from docker-compose.yml file
 - `docker-compose up`
