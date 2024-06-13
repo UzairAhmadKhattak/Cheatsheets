@@ -27,7 +27,11 @@
   Runs an image in a container interactively.
 - `docker run -it (name of image) sh` or `docker run -it (name of image) bash`  
   Runs an image in a container with a shell (`sh` or `bash`, depending on the OS of the image).
-
+  - `docker cp source destination`
+  copy file from contianer to host
+- `docker run -d -p 5000:5000 -v $(pwd):/app`
+  So that we dont need to build image each time.
+  
 ## Logging In and Pushing to Registry
 - `docker login`  
   Logs in to a Docker registry.
