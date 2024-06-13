@@ -35,7 +35,9 @@
 ## Logging In and Pushing to Registry
 - `docker login`  
   Logs in to a Docker registry.
-- `docker push (name of image)`  
+- Rename your image with the uzairname/repo:tag using check example bellow
+  `docker tag bbaecdb1571c uzairahmadkhattak/fun-project:containerization-production_backend`
+- `docker push uzairahmadkhattak/fun-project:containerization-production_backend`  
   Pushes an image to a Docker registry.
 
 ## Tagging Images
